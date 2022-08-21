@@ -12,6 +12,5 @@ phases:
       - npm ci
   pre_build:
     commands:
-      - npm run storybook
-      - npm run storycap
-      - reg-suit
+      - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
+      - npm run reg-suit
