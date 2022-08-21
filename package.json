@@ -1,6 +1,9 @@
 {
   "name": "vue3-vrt-storybook-storycap-reg-suit-sample",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.16.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
