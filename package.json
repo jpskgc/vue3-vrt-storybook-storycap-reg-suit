@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "storycap" : "storycap http://localhost:6006",
     "reg-suit": "reg-suit run"
   },
   "dependencies": {

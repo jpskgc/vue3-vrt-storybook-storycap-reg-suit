@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      # install node.js
+      - npm i -g npm@latest
+      - npm pkg get engines.node | sed 's/"//g' | xargs n
+      # install packages
+      - npm ci
+  pre_build:
+    commands:
+      - npm run storybook
+      - npm run storycap
+      - reg-suit
