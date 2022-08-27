@@ -10,6 +10,9 @@ phases:
       - npm pkg get engines.node | sed 's/"//g' | xargs n
       # install packages
       - npm ci
+      # chrome
+      - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+      - yum -y install google-chrome*.rpm
   pre_build:
     commands:
       - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
