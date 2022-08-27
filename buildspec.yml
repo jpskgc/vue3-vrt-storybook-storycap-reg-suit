@@ -19,5 +19,5 @@ phases:
     commands:
       - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
       - echo $CODEBUILD_SOURCE_VERSION
-      - echo $(git rev-parse origin/master)
+      - echo $(git rev-parse origin/main)
       - npm run reg-suit
