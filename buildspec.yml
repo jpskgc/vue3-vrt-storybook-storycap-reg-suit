@@ -25,4 +25,6 @@ phases:
       - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
       - EXPECTED_KEY=$(git rev-parse origin/main)
       - ACTUAL_KEY=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo $EXPECTED_KEY
+      - echo $ACTUAL_KEY
       - npm run reg-suit
