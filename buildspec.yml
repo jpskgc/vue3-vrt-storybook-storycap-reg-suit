@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    EXPECTED_KEY: ${git rev-parse origin/main}
-    ACTUAL_KEY: ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+    EXPECTED_KEY: ""
+    ACTUAL_KEY: ""
 
 phases:
   install:
@@ -23,6 +23,6 @@ phases:
   pre_build:
     commands:
       - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
-      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-      - echo $(git rev-parse origin/main)
+      - EXPECTED_KEY=$(git rev-parse origin/main)
+      - ACTUAL_KEY=$CODEBUILD_RESOLVED_SOURCE_VERSION
       - npm run reg-suit
