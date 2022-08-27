@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    EXPECTED_KEY: $(git rev-parse origin/main)
-    ACTUAL_KEY: $CODEBUILD_RESOLVED_SOURCE_VERSION
+    EXPECTED_KEY: ${git rev-parse origin/main}
+    ACTUAL_KEY: ${CODEBUILD_RESOLVED_SOURCE_VERSION}
 
 phases:
   install:
