@@ -18,4 +18,6 @@ phases:
   pre_build:
     commands:
       - npx storycap --serverCmd "npx start-storybook -p 6060 --ci" http://localhost:6060
+      - echo $CODEBUILD_SOURCE_VERSION
+      - echo $(git rev-parse origin/master)
       - npm run reg-suit
